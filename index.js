@@ -1,0 +1,38 @@
+const searchBar = document.querySelector('#brewery-search');
+const info = document.querySelector('#info');
+
+
+const findBrewery = (e) => {
+    e.preventDefault();
+    info.innerHTML = ""
+
+
+    const text = (document.querySelector('[id=search-bar]').value);
+    const stateText = (document.querySelector('[id=state-bar]').value);
+        const theUrl = `https://api.openbrewerydb.org/breweries?by_name=${text}&by_state=${stateText}`;
+        const beerUrl = fetch(theUrl);
+        console.log(theUrl)
+        beerUrl
+            .then(response => response.json())
+            .then(data => {
+                if(data.length > 0) {
+                    data.forEach(brewery => {
+                        info.innerHTML += `
+                        <div class="brewery-section">
+                        <h2>${brewery.name}</h2>
+                        <p><strong>website:</strong> <a href="${brewery.website_url}" target="_blank">${brewery.website_url}</a></p>
+                        <p><strong>Type:</strong> ${brewery.brewery_type}</p>
+                        <p><strong>Address:</strong> ${brewery.street}, ${brewery.city}, ${brewery.state}, ${brewery.country} </p>
+                        </div>
+                        `
+                    });
+                } else {
+                    info.innerHTML += "<h2 class='centre-text'>No results found</h2>";
+                };
+            });
+};
+
+
+
+
+searchBar.addEventListener('submit', findBrewery); 
