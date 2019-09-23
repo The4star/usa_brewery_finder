@@ -12,7 +12,7 @@ const findBrewery = (e) => {
     const cityText = (document.querySelector('[id=city-bar]').value);
 
     if(cityText != "") {
-        info.innerHTML += `<h2 class="centre-text">Showing results for ${cityText}</h2>`
+        info.innerHTML += `<h2 class="centre-text result-header">Showing results for ${cityText}</h2>`
         const theUrl = `https://api.openbrewerydb.org/breweries?by_city=${cityText}`;
         const beerUrl = fetch(theUrl);
         console.log(theUrl)
@@ -31,17 +31,17 @@ const findBrewery = (e) => {
                         `
                     });
                 } else {
-                    info.innerHTML += "<h2 class='centre-text'>No results found</h2>";
+                    info.innerHTML += "<h2 class='centre-text result-header'>No results found</h2>";
                 };
             });
 
     } else {
         if (text && !stateText) {
-            info.innerHTML += `<h2 class="centre-text">Showing results for ${text}.</h2>`
+            info.innerHTML += `<h2 class="centre-text result-header">Showing results for ${text}.</h2>`
         } else if (stateText && !text) {
-            info.innerHTML += `<h2 class="centre-text">Showing results for ${stateText}.</h2>`
+            info.innerHTML += `<h2 class="centre-text result-header">Showing results for ${stateText}.</h2>`
         } else {
-            info.innerHTML += `<h2 class="centre-text">Showing results for ${text}, ${stateText}.</h2>`
+            info.innerHTML += `<h2 class="centre-text result-header">Showing results for ${text}, ${stateText}.</h2>`
         }
         const theUrl = `https://api.openbrewerydb.org/breweries?by_name=${text}&by_state=${stateText}`;
         const beerUrl = fetch(theUrl);
@@ -61,7 +61,7 @@ const findBrewery = (e) => {
                         `
                     });
                 } else {
-                    info.innerHTML += "<h2 class='centre-text'>No results found</h2>";
+                    info.innerHTML += "<h2 class='centre-text result-header'>No results found</h2>";
                 };
             });
         };
