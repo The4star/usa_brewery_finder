@@ -43,6 +43,7 @@ h2 {
 
 .centre-text {
     align-self: center!important;
+    text-align: center;
 }
 
 #search-area {
@@ -124,4 +125,11 @@ label {
         min-width:95vw;
     }
 
+    h1 { 
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
   }
