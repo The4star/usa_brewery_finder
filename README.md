@@ -1,5 +1,7 @@
 ## Brew Finder - USA Edition
 
+![usa brewfinder gif](./img/usa_brew_finder.gif "Demo gif")
+
 ## Created By
 |[![Clinton Forster](./img/clinton_small.jpg)]
 https://github.com/The4Star 
@@ -7,8 +9,6 @@ https://github.com/The4Star
 | Clinton Forster | 
 
 Deployed Site: https://the4star.github.io/usa_brewery_finder/
-
-![usa brewfinder gif](./img/usa_brew_finder.gif "Demo gif")
 
 ## Purpose 
 
